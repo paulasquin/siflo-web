@@ -69,7 +69,7 @@ p { margin: 0; }
 .shell { display: flex; height: 100%; }
 .wl { width: 300px; flex: none; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; padding: 10px; background: color-mix(in srgb, var(--card) 35%, transparent); min-height: 0; }
 .brand { display: flex; gap: 8px; align-items: center; font: 600 19px/1 var(--display); letter-spacing: .01em; color: var(--pri); padding: 2px 4px; }
-.pline { background: var(--card); border-radius: 14px; padding: 8px 10px; display: flex; gap: 8px; align-items: center; font-size: 12.5px; }
+.pline { background: var(--card); border-radius: 14px; padding: 8px 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12.5px; }
 .pline .ic { color: var(--ok); }
 .pline.off .ic { color: var(--var); }
 .wlist { background: var(--card); border-radius: 14px; overflow-y: auto; display: flex; flex-direction: column; min-height: 0; }
@@ -102,6 +102,11 @@ p { margin: 0; }
 .ibtn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); flex: none; }
 .ibtn .ic { width: 18px; height: 18px; }
 .ibtn.on { background: var(--cont); border-color: var(--pri); color: var(--pri); }
+.prog { flex-basis: 100%; height: 4px; border-radius: 2px; background: var(--bar-line); overflow: hidden; }
+.prog > span { display: block; height: 100%; border-radius: 2px; background: var(--pri); transition: width 1s linear; }
+.prog.run > span { width: 30%; transition: none; animation: prog 1.2s linear infinite; }
+@keyframes prog { from { transform: translateX(-100%); } to { transform: translateX(333%); } }
+@media (prefers-reduced-motion: reduce) { .prog.run > span { animation: none; width: 100%; opacity: .5; } }
 .defbar { background: var(--bar); color: var(--bar-on); padding: 6px 14px; font-size: 13px; display: flex; gap: 8px; align-items: center; border-bottom: 1px solid var(--bar-line); }
 .defbar > span { flex: 1; }
 .defbar .ic { width: 18px; height: 18px; }
