@@ -132,8 +132,11 @@ p { margin: 0; }
 .reacts { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px; }
 .react { display: inline-flex; gap: 4px; background: var(--card); border-radius: 999px; padding: 1px 7px; font-size: 12px; border: 1px solid var(--line); }
 .react.mine { border-color: var(--pri); }
-.acts { position: absolute; top: -14px; right: 6px; display: none; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, .12); }
+.acts { position: absolute; top: 0; right: 100%; display: none; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, .12); }
 .bub:hover .acts, .bub:focus-within .acts { display: flex; }
+/* Beside the bubble, on its open side, so it covers neither the author nor the text; the picker opens towards the middle. */
+.bub:not(.me) .acts { right: auto; left: 100%; }
+.bub:not(.me) .picker { right: auto; left: 0; }
 .acts > button { width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
 .acts .ic { width: 16px; height: 16px; }
 .picker { position: absolute; top: 30px; right: 0; display: flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 3px 6px; z-index: 3; }
@@ -177,4 +180,6 @@ p { margin: 0; }
   .lo span { display: none; }
   .lo.narrow { display: inline-flex; }
   .bub { max-width: 85%; }
+  .acts { top: -14px; right: 6px; }
+  .bub:not(.me) .acts { left: 6px; }
 }
