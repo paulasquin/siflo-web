@@ -46,17 +46,21 @@ p { margin: 0; }
 .framed { padding: 24px; font-weight: 600; text-align: center; }
 
 /* W1, W2 */
-.w1 { align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.w1 { align-items: center; align-content: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
 .w1 .left { display: flex; flex-direction: column; gap: 16px; max-width: 340px; }
 .brandline { display: flex; gap: 12px; align-items: center; }
 .w1 h1 { font: 600 30px/1.05 var(--display); letter-spacing: .01em; color: var(--pri); }
-.steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; counter-reset: s; font-size: 15px; }
-.steps li { display: flex; gap: 12px; align-items: center; counter-increment: s; }
-.steps li::before { content: counter(s); width: 26px; height: 26px; border-radius: 50%; background: var(--cont); color: var(--pri); font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
-.chk { display: flex; gap: 10px; align-items: center; cursor: pointer; }
-.chk input { width: 18px; height: 18px; accent-color: var(--pri); margin: 0; }
-.keys { display: flex; gap: 8px; align-items: center; color: var(--var); font-size: 13px; }
-.keys .ic { color: var(--ok); width: 18px; height: 18px; }
+/* One grid for the brand line and every row: a 40 px icon column (the logo's), the texts on one left edge. */
+.scan, .keys, .chk { display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; align-items: center; margin: 0; }
+.scan > .ic { width: 40px; height: 40px; padding: 9px; border-radius: 50%; background: var(--cont); color: var(--pri); box-sizing: border-box; }
+.scan p { margin: 0; }
+.scan .main { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.notes { display: flex; flex-direction: column; gap: 10px; }
+.keys { color: var(--var); font-size: 13px; }
+.keys .ic { justify-self: center; color: var(--ok); width: 20px; height: 20px; }
+.keys .ic.dim { color: var(--var); }
+.chk { cursor: pointer; font-size: 14px; }
+.chk input { justify-self: center; width: 18px; height: 18px; accent-color: var(--pri); margin: 0; }
 .qrbox { background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 2px 12px rgba(0, 0, 0, .1); display: flex; flex-direction: column; align-items: center; gap: 10px; color: #5e544c; }
 .qr { width: 240px; height: 240px; display: block; }
 .renew { font-size: 13px; width: 100%; }
