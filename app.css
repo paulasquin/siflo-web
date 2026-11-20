@@ -235,3 +235,20 @@ div.voice { margin-top: 6px; color: var(--var); }
 .btn.ghost { background: none; color: var(--pri); border: 1px solid var(--line); }
 video.scan { width: 100%; border-radius: 14px; background: #000; aspect-ratio: 4 / 3; object-fit: cover; }
 .bub.hl { outline: 2px solid var(--pri); outline-offset: 2px; }
+.wcard.sheet .wc.off { opacity: .55; cursor: default; }
+.wcard.sheet .wc > .ic { width: 22px; height: 22px; margin: 0 8px; flex: none; }
+
+/* Lot C, page only (W29) */
+button.quote { width: 100%; text-align: left; font-size: 12.5px; cursor: pointer; align-items: flex-start; }
+button.quote:hover { background: color-mix(in srgb, var(--pri) 14%, transparent); }
+.down { position: absolute; right: 18px; bottom: 76px; z-index: 4; width: 40px; height: 40px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); box-shadow: 0 2px 10px rgba(0, 0, 0, .12); display: flex; align-items: center; justify-content: center; }
+.down[hidden] { display: none; }
+.down .badge { position: absolute; top: -6px; right: -6px; }
+.lightbox { flex-direction: column; gap: 10px; }
+.lightbox img { cursor: zoom-in; }
+.lightbox.zoom { overflow: auto; align-items: flex-start; justify-content: flex-start; }
+.lightbox.zoom img { max-width: none; max-height: none; cursor: zoom-out; }
+.lbbar { display: flex; gap: 8px; align-items: center; background: var(--card); border-radius: 999px; padding: 4px 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, .14); }
+.lightbox.zoom .lbbar { position: sticky; bottom: 8px; left: 50%; order: 2; align-self: center; }
+.lbbar .ibtn:disabled { opacity: .35; }
+.lbn { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--var); padding: 0 4px; }
