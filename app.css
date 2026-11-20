@@ -71,6 +71,10 @@ p { margin: 0; }
 .brand { display: flex; gap: 8px; align-items: center; font: 600 19px/1 var(--display); letter-spacing: .01em; color: var(--pri); padding: 2px 4px; }
 .pline { background: var(--card); border-radius: 14px; padding: 8px 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12.5px; }
 .pline .ic { color: var(--ok); }
+.wfilter { margin: 8px 0 2px; width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 12px; padding: 7px 12px; background: var(--card); color: var(--on); font: inherit; font-size: 13px; }
+.wfilter:focus-visible { outline: 2px solid var(--pri); outline-offset: 1px; }
+.wlist .empty { padding: 12px; font-size: 13px; color: var(--var); }
+.tx a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
 .pline.off .ic { color: var(--var); }
 .wlist { background: var(--card); border-radius: 14px; overflow-y: auto; display: flex; flex-direction: column; min-height: 0; }
 .wc { display: flex; gap: 9px; align-items: center; padding: 8px 10px; border-top: 1px solid var(--soft); text-align: left; width: 100%; }
@@ -169,6 +173,8 @@ p { margin: 0; }
 .wcomp .send { width: 40px; height: 40px; border-radius: 50%; background: var(--pri); color: var(--on-pri); display: flex; align-items: center; justify-content: center; flex: none; }
 .ctx { display: flex; gap: 8px; align-items: center; font-size: 12.5px; color: var(--var); }
 .ctx > span { flex: 1; }
+.ctx.att img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; }
+.ctx.att > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .readonly { text-align: center; color: var(--var); font-size: 13px; padding: 8px; }
 .over { position: absolute; inset: 0; background: var(--shade); display: flex; align-items: center; justify-content: center; z-index: 5; padding: 16px; }
 .over[hidden] { display: none; }
@@ -189,3 +195,43 @@ p { margin: 0; }
   .acts { top: -14px; right: 6px; }
   .bub:not(.me) .acts { left: 6px; }
 }
+
+/* Lot B (W24–W28) */
+.frow { display: flex; gap: 6px; align-items: center; margin: 8px 0 2px; }
+.frow .wfilter { margin: 0; flex: 1; min-width: 0; }
+.lsec { display: flex; gap: 6px; align-items: center; width: 100%; padding: 10px 12px 4px; font-size: 12px; font-weight: 600; color: var(--var); text-transform: uppercase; letter-spacing: .04em; }
+.lsec .ic { width: 14px; height: 14px; }
+.wc.hit .pv { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.nm .pinned { width: 13px; height: 13px; margin-right: 4px; vertical-align: -2px; color: var(--var); }
+.wh { position: relative; }
+.cmenu { position: absolute; right: 14px; top: 100%; z-index: 6; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 6px 24px rgba(0, 0, 0, .14); padding: 6px; display: flex; flex-direction: column; min-width: 220px; }
+.cmenu button { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 10px; font-size: 14px; text-align: left; }
+.cmenu button:hover, .cmenu button:focus-visible { background: var(--sel); }
+.cmenu .ic { width: 18px; height: 18px; color: var(--var); }
+.btn.voice, audio.voice { margin-top: 6px; }
+audio.voice { width: 240px; max-width: 100%; height: 36px; display: block; }
+div.voice { margin-top: 6px; color: var(--var); }
+.fileline { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.fileline .fn { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.fileline .fs { font-size: 12px; color: var(--var); white-space: nowrap; }
+.fileline .ibtn { width: 30px; height: 30px; }
+.maplink { display: inline-flex; gap: 6px; align-items: center; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--pri); }
+.maplink .ic { width: 16px; height: 16px; }
+.wcomp .row.rec { align-items: center; }
+.recdot { width: 10px; height: 10px; border-radius: 50%; background: var(--sos); animation: recblink 1s ease-in-out infinite alternate; }
+@keyframes recblink { to { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .recdot { animation: none; } }
+.reclabel { flex: 1; font-variant-numeric: tabular-nums; }
+.wcard.sheet { align-items: stretch; text-align: left; width: min(440px, 100%); max-height: min(640px, 90vh); overflow-y: auto; }
+.wcard.sheet h1 { padding-right: 32px; }
+.wcard.sheet h2 { font: 600 13px/1.3 var(--body); color: var(--var); text-transform: uppercase; letter-spacing: .04em; margin-top: 6px; }
+.wcard.sheet .wfilter { margin: 0; }
+.clist { display: flex; flex-direction: column; gap: 2px; }
+.wcard.sheet .wc { display: flex; gap: 10px; align-items: center; text-align: left; }
+.wc.pick { cursor: pointer; }
+.wc.pick input { accent-color: var(--pri); }
+.lrow { display: flex; gap: 8px; align-items: center; }
+.lrow .wfilter { flex: 1; min-width: 0; }
+.btn.ghost { background: none; color: var(--pri); border: 1px solid var(--line); }
+video.scan { width: 100%; border-radius: 14px; background: #000; aspect-ratio: 4 / 3; object-fit: cover; }
+.bub.hl { outline: 2px solid var(--pri); outline-offset: 2px; }
