@@ -1,10 +1,12 @@
-/* Siflo Web, as drawn on the mockup (docs/mockups/web-client/page.html): the app's colours, light and dark. */
+/* Siflo Web, as drawn on the mockup (docs/mockups/web-client/page.html): the app's colours, light and dark; siflo.app's fonts. */
+@font-face { font-family: "Unbounded"; src: url(fonts/unbounded-latin.woff2) format("woff2"); font-weight: 300 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url(fonts/inter-latin.woff2) format("woff2"); font-weight: 300 700; font-style: normal; font-display: swap; }
 :root {
   --bg1: #fdf8f3; --bg2: #f8dcc4; --card: #fff; --on: #1f1b16; --var: #6f6258; --pri: #b84a00; --cont: #ffdbc7; --line: #ead9cb;
   --soft: #f0e4da; --ok: #2e7d32; --err: #b3261e; --sos: #c62828; --bar: #fff1d6; --bar-on: #5c3b00; --bar-line: #f1d7a6;
   --me: #ffdbc7; --sel: #ffeadb; --tick: #1a73e8; --shade: rgba(40, 28, 20, .5); --on-pri: #fff;
-  --display: "Barlow Condensed", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif;
-  --body: -apple-system, "SF Pro Text", Roboto, "Segoe UI", system-ui, sans-serif;
+  --display: "Unbounded", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, Menlo, Consolas, monospace;
   color-scheme: light dark;
 }
@@ -32,7 +34,7 @@ p { margin: 0; }
 .page { min-height: 100%; display: flex; padding: 24px 16px; }
 .page.center { align-items: center; justify-content: center; }
 .wcard { background: var(--card); border-radius: 22px; box-shadow: 0 2px 12px rgba(0, 0, 0, .1); padding: 26px 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; max-width: 420px; position: relative; }
-.wcard h1 { font-size: 20px; font-weight: 600; }
+.wcard h1 { font: 500 18px/1.25 var(--display); }
 .wcard p { color: var(--var); }
 .wcard p.strong { color: var(--on); font-weight: 600; font-size: 16px; }
 .wcard p.hint { font-size: 12.5px; }
@@ -47,7 +49,7 @@ p { margin: 0; }
 .w1 { align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
 .w1 .left { display: flex; flex-direction: column; gap: 16px; max-width: 340px; }
 .brandline { display: flex; gap: 12px; align-items: center; }
-.w1 h1 { font: 600 40px/1 var(--display); color: var(--pri); }
+.w1 h1 { font: 600 30px/1.05 var(--display); letter-spacing: .01em; color: var(--pri); }
 .steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; counter-reset: s; font-size: 15px; }
 .steps li { display: flex; gap: 12px; align-items: center; counter-increment: s; }
 .steps li::before { content: counter(s); width: 26px; height: 26px; border-radius: 50%; background: var(--cont); color: var(--pri); font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
@@ -66,7 +68,7 @@ p { margin: 0; }
 /* W3 */
 .shell { display: flex; height: 100%; }
 .wl { width: 300px; flex: none; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; padding: 10px; background: color-mix(in srgb, var(--card) 35%, transparent); min-height: 0; }
-.brand { display: flex; gap: 8px; align-items: center; font: 600 26px/1 var(--display); color: var(--pri); padding: 2px 4px; }
+.brand { display: flex; gap: 8px; align-items: center; font: 600 19px/1 var(--display); letter-spacing: .01em; color: var(--pri); padding: 2px 4px; }
 .pline { background: var(--card); border-radius: 14px; padding: 8px 10px; display: flex; gap: 8px; align-items: center; font-size: 12.5px; }
 .pline .ic { color: var(--ok); }
 .pline.off .ic { color: var(--var); }
@@ -166,7 +168,7 @@ p { margin: 0; }
 
 @media (max-width: 720px) {
   .w1 { gap: 24px; }
-  .w1 h1 { font-size: 34px; }
+  .w1 h1 { font-size: 24px; }
   .wl { width: 100%; border-right: 0; }
   .shell .wr { display: none; }
   .shell.has-open .wl { display: none; }
