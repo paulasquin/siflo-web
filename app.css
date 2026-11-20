@@ -252,3 +252,17 @@ button.quote:hover { background: color-mix(in srgb, var(--pri) 14%, transparent)
 .lightbox.zoom .lbbar { position: sticky; bottom: 8px; left: 50%; order: 2; align-self: center; }
 .lbbar .ibtn:disabled { opacity: .35; }
 .lbn { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--var); padding: 0 4px; }
+
+/* Lot C with the phone (W30) */
+.mentions { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px; max-height: 240px; overflow-y: auto; }
+.mentions[hidden] { display: none; }
+.mentions button { display: flex; gap: 10px; align-items: center; padding: 6px 8px; border-radius: 10px; text-align: left; }
+.mentions button:hover, .mentions button:focus-visible { background: var(--sel); }
+.mentions .av { width: 26px; height: 26px; font-size: 12px; }
+.tm .starred { width: 12px; height: 12px; fill: currentColor; }
+.picker.dels { flex-direction: column; align-items: stretch; }
+.picker.dels button { padding: 6px 12px; text-align: left; white-space: nowrap; font-size: 13px; }
+.wcard.sheet label.check { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.wcard.sheet label.check input { accent-color: var(--pri); }
+.irow { display: flex; justify-content: space-between; gap: 12px; padding: 4px 2px; font-size: 14px; }
+.irow .tm { color: var(--var); font-size: 12px; }
