@@ -266,3 +266,4 @@ button.quote:hover { background: color-mix(in srgb, var(--pri) 14%, transparent)
 .wcard.sheet label.check input { accent-color: var(--pri); }
 .irow { display: flex; justify-content: space-between; gap: 12px; padding: 4px 2px; font-size: 14px; }
 .irow .tm { color: var(--var); font-size: 12px; }
+a.ibtn { color: inherit; text-decoration: none; }
